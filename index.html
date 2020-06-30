@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="wing.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/5229213cc6.js" crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <header id="header">
+            <div class="container fluid-width">
+                <div class="row">
+                    <div class="col mv-0">
+                        <div class="logo">
+                            <h1>Stranger Things</h1>
+                        </div>
+                    </div>
+                    <div class="col mv-0">
+                        <nav class="nav">
+                            <a href="#" class="nav-item action" data-modal="#register">Register</a>
+                            <a href="#" class="nav-item action" data-modal="#login">Log In</a>
+                            <a href="#" class="nav-item logout" data-action="logout">Sign Out</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="content">
+            <aside id="sidebar">
+                <div class="container fluid-width">
+                    <div class="row">
+                        <div class="col mv-2">test sidebar</div>
+                    </div>
+                </div>
+            </aside>
+
+            </aside>
+            <main id="main">
+                <div class="container fluid-width">
+                    <div class="row">
+                        <div class="col mv-2">test main</div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <footer id="footer">test footer</footer>
+        
+    </div>
+
+    <div id="register" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <a class="close">&times;</a>
+                <h2>Register Here</h2><br>
+            </div>
+        </div>
+    </div>
+
+    <div id="login" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <a class="close">&times;</a>
+                <h2>Login Here</h2><br>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
