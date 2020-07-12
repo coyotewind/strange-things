@@ -148,13 +148,15 @@ async function deletePost(POST_ID) {
 
 async function getUserData() {
     try {
-        const response = await fetch(`${BASE}/${TEST}/${ME}`, {
-            method: "GET",
-            headers: makeHeaders(),
-        })
-        const results = await response.json();
-        state.whois = results.data.user.username;
-        $('#user-name').append(`${state.whois}!` );
+        if(loggedIn) {
+            const response = await fetch(`${BASE}/${TEST}/${ME}`, {
+                method: "GET",
+                headers: makeHeaders(),
+            })
+            const results = await response.json();
+            state.whois = results.data.user.username;
+            $('#user-name').append(`${state.whois}!` );
+        }
     } catch (error) {
         (console.error);
     }
