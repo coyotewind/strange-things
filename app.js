@@ -327,6 +327,7 @@ function logout() {
     session = undefined; 
     loggedIn = false;
     state.whois = '';
+    window.location.replace('https://strange-things.netlify.app/');
     bootstrap();
     console.log('remove session')
 }
@@ -581,7 +582,6 @@ function bootstrap() {
     getUserData()
     fetchAllPosts();
     updateUI();
-    console.log('load sidebar width', bootWidth)
     console.log('initialize')
 }
 
