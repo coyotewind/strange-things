@@ -186,6 +186,7 @@ aside .accord-head {
 
 aside .accord-head:hover {
     color: #FFFFFF !important;
+    cursor: pointer;
 }
 
 aside .accord-body {
@@ -363,6 +364,11 @@ footer {
     font-size: 1.4rem; 
     font-weight: 600; 
     margin: 0.3rem 0 0 1rem; 
+}
+
+.controls span.message-count {
+    font-weight: 400;   
+    margin-left: 0.5rem;
 }
 
 .buttons span { 

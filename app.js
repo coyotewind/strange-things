@@ -146,7 +146,7 @@ async function deletePost(POST_ID) {
 
 // fetch all posts
 
-async function loggedInUser() {
+async function getUserData() {
     try {
         const response = await fetch(`${BASE}/${TEST}/${ME}`, {
             method: "GET",
@@ -154,6 +154,7 @@ async function loggedInUser() {
         })
         const results = await response.json();
         state.whois = results.data.user.username;
+        $('#user-name').append(`${state.whois}!` );
     } catch (error) {
         (console.error);
     }
@@ -343,6 +344,7 @@ function updateUI() {
     if(loggedIn) {
         $('.auth').removeClass('hide');
         $('.free').addClass('hide');
+        $('#user-name').append(state.whois);
     } else { 
         $('.auth').addClass('hide');
         $('.free').removeClass('hide');
@@ -570,10 +572,11 @@ document.addEventListener('mouseup', function(e) {
 
 function bootstrap() { 
     if (localStorage.getItem('newWidth')) {
-        bootWidth = JSON.parse(localStorage.getItem('newWidth')) || '40rem';
+        bootWidth = JSON.parse(localStorage.getItem('newWidth'));
         wrapper.style.gridTemplateColumns = bootWidth+' 0.4rem auto';       
     }
     isLoggedIn();
+    getUserData()
     fetchAllPosts();
     updateUI();
     console.log('load sidebar width', bootWidth)
@@ -589,10 +592,8 @@ $(document).ready(function() {
         }
         if ( $(this).next('.accord-body').is(':visible') ) {
             $(this).next('.accord-body').slideUp(400);
-            $(this).css( {'background-color': 'transparent', 'color': '#CFC3CF'} )
         } else {
             $(this).next('.accord-body').slideDown(400);
-            $(this).css( {'background-color': 'transparent', 'color': '#FFFFFF'} )
             $(this).children('.accord-head i').css({'transform': 'rotate(90deg)', 'transition': 'transform 0.3s'});
         }
     });
