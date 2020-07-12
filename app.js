@@ -324,7 +324,9 @@ function login() {
 
 function logout() {
     localStorage.removeItem('session');
-    session = undefined; loggedIn = false;
+    session = undefined; 
+    loggedIn = false;
+    state.whois = '';
     bootstrap();
     console.log('remove session')
 }
