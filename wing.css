@@ -100,11 +100,11 @@ a:hover {
 [type=submit],button {
   padding: 1.1rem 3.5rem;
   margin: 1rem 0;
-  background: #111;
+  background: #1164A3;
   color: #f5f5f5;
-  border-radius: 2px;
+  border-radius: 1rem;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   transition: all .2s ease;
 }
 
@@ -130,16 +130,17 @@ a:hover {
 }
 
 [type=submit]:active,button:active {
-  transform: scale(.99);
+  transform: scale(1);
+  background: #1A1A1A !important;
 }
 
 input[type=date], input[type=email],input[type=file],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],select,textarea,textarea[type=text] {
-  margin: 2rem 0;
+  margin: 1rem 0 3rem;
   width: 100%;
   max-width: 100%;
-  border-radius: 2px;
+  border-radius: 1rem;
   border: 1px solid #a4a4a4;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   transition: all .2s ease;
 }
 
@@ -153,12 +154,12 @@ input[type=date]:focus, input[type=email]:focus,input[type=file],input[type=numb
 }
 
 input[type=date], input[type=email],input[type=file],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],select {
-  padding: 1.1rem;
+  padding: 1.5rem;
 }
 
 textarea,textarea[type=text] {
   height: 10rem;
-  padding: 14px 20px;
+  padding: 1.5rem;
 }
 
 .container {
@@ -166,6 +167,8 @@ textarea,textarea[type=text] {
   margin: 0 auto;
   width: calc(100% - 40px);
 }
+
+label { margin-left: 3px; }
 
 .row {
   display: flex;

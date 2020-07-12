@@ -3,12 +3,13 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title></title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="wing.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&M|display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="wing.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/5229213cc6.js" crossorigin="anonymous"></script>
     <script defer src="app.js"></script>
+    <script defer src="moment.js"></script>
 </head>
 
 <body>
@@ -17,16 +18,17 @@
         <header id="header">
             <div class="container fluid-width">
                 <div class="row">
-                    <div class="col mv-0">
+                    <div class`="col mv-0">
                         <div class="logo">
                             <h1>Stranger Things</h1>
                         </div>
                     </div>
                     <div class="col mv-0">
-                        <nav class="nav">
-                            <a href="#" class="nav-item action" data-modal="#register">Register</a>
-                            <a href="#" class="nav-item action" data-modal="#login">Log In</a>
-                            <a href="#" class="nav-item logout" data-action="logout">Sign Out</a>
+                        <nav id="nav" class="nav">
+                            <a href="#" class="nav-item action free" data-modal="#register-user">Sign Up</a>
+                            <a href="#" class="nav-item action free" data-modal="#login-user">Log In</a>
+                            <a href="#" class="nav-item logout auth hide" id="logout">Sign Out</a>
+                            <span class="avatar"><i class="material-icons">account_circle</i></span>
                         </nav>
                     </div>
                 </div>
@@ -37,16 +39,115 @@
             <aside id="sidebar">
                 <div class="container fluid-width">
                     <div class="row">
-                        <div class="col mv-2">test sidebar</div>
+                        <div class="col mv-0">
+                            <nav class="nav">
+                                <div class="nav-item">
+                                    <div class="accord-head">
+                                        <i class="material-icons">play_arrow</i> My Account
+                                    </div>
+                                    <div class="accord-body" style="display: block;">
+                                        <div class="accord-content">
+                                            
+                                            <div class="free">
+                                                <h5>Can't Touch This</h5>
+                                                <h6>You must sign up or log in to complete this action.</h6>
+                                                <br>
+                                                <form class="prompt-auth">
+                                                    <fieldset>
+                                                        <button class="action" data-modal="#register-user">Sign Up</button>
+                                                        <button class="action" data-modal="#login-user">Log In</button>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+
+                                            <div class="auth">
+                                                <h5 id="user-name">Welcome { User }</h5>
+                                                <h6>Don't be a stranger, but please do be strange.</h6>
+                                                <br>
+                                                <form class="prompt-auth">
+                                                    <fieldset>
+                                                        <button class="action" data-modal="#add-post">Add Post</button>
+                                                        <button id="logout">Log Out</button>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-item">
+                                    <div class="accord-head">
+                                        <i class="material-icons">play_arrow</i>
+                                        <span>Search Posts</span>
+                                    </div>
+                                    <div class="accord-body">
+                                        <div class="accord-content search">
+                                            <form>
+                                                <fieldset>
+                                                    <input id="keyword" type="text" placeholder="Enter keywords and hit search...">
+                                                    <button id="search">Search</button>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-item" href="#">
+                                    <div class="accord-head">
+                                        <i class="material-icons">play_arrow</i>
+                                        <span>Add New Post</span>
+                                    </div>
+                                    <div class="accord-body">
+                                        <div class="accord-content">
+                                            
+                                            <div class="auth">
+                                                <h5>Create Post</h5>
+                                                <form id="create-post"> 
+                                                    <fieldset>
+                                                        <label for="post-title">Post Title</label>
+                                                        <input id="post-title" type="text" maxlength="120" required>
+                                                    </fieldset>
+                                                    <fieldset>
+                                                        <label for="post-content">Post Content</label>
+                                                        <textarea id="post-content" rowspan="10" type="text" required></textarea>
+                                                    </fieldset>
+                                                    <fieldset>
+                                                        <button class="add-post">Add Post</button>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+
+                                            <div class="free">
+                                                <h5>Can't Touch This</h5>
+                                                <h6>You must sign up or log in to complete this action.</h6>
+                                                <br>
+                                                <form class="prompt-auth">
+                                                    <fieldset>
+                                                        <button class="action" data-modal="#register-user">Sign Up</button>
+                                                        <button class="action" data-modal="#login-user">Log In</button>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </nav>
+
+
+                        </div>
                     </div>
                 </div>
             </aside>
-
-            </aside>
+            <div id="drag"></div>
             <main id="main">
                 <div class="container fluid-width">
                     <div class="row">
-                        <div class="col mv-2">test main</div>
+                        <div class="col mv-1">
+                            <div id="posts">
+                                <div id="feed"></div>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </main>
@@ -54,26 +155,170 @@
 
         <footer id="footer">test footer</footer>
         
-    </div>
-
-    <div id="register" class="modal">
-        <div class="modal-content">
-            <div class="contact-form">
-                <a class="close">&times;</a>
-                <h2>Register Here</h2><br>
+        <div id="register-user" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    
+                    <form id="create-user" >
+                        <h4>Sign Up </h4><br>
+                        <fieldset>
+                            <label for="enter-username">Enter Username</label>
+                            <input id="enter-username" type="text" placeholder="Enter Username" minlength="8" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="enter-password">Enter Password</label>
+                            <input id="enter-password" type="password" placeholder="Enter Password" minlength="8" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="password">Confirm Password</label>
+                            <input id="confirm-password" type="password" placeholder="Confirm Password" minlength="8" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="create">&nbsp;</label>
+                            <button id="create" class="modal-btn">Sign Up</button>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="login" class="modal">
-        <div class="modal-content">
-            <div class="contact-form">
-                <a class="close">&times;</a>
-                <h2>Login Here</h2><br>
+        <div id="login-user" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    <form id="auth-user"></form>
+                        <h4>Login Here</h4><br>
+                        <fieldset>
+                            <label for="username">Enter Username</label>
+                            <input id="username" type="text" placeholder="Enter Username" minlength="8" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="password">Enter Password</label>
+                            <input id="password" type="password" placeholder="Enter Password" minlength="8" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="login">&nbsp;</label>
+                            <button id="login" class="modal-btn" >Login</button>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
+        <div id="edit-post" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    <form id="update-post">
+                        <h4>Edit Post</h4><br>
+                        <fieldset>
+                            <label for="edit-title">Post Title</label>
+                            <input id="edit-title" type="text" maxlength="120" placeholder="Enter Title" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="edit-content">Post Content</label>
+                            <textarea id="edit-content" rowspan="10" type="text" required></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <label for="update">&nbsp;</label>
+                            <button id="update" class="update-post">Update Post</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="add-post" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    <form id="create-post-modal" >
+                        <h4>Create Post</h4><br>
+                        <fieldset>
+                            <label for="post-title">Post Title</label>
+                            <input id="post-title-modal" type="text" maxlength="120" placeholder="Enter Title" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="post-content">Post Content</label>
+                            <textarea id="post-content-modal" rowspan="10" type="text" required></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <label for="post">&nbsp;</label>
+                            <button class="add-post">Add Post</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-message" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    <form id="create-message">
+                        <h4>Create Message</h4><br>
+                        <fieldset>
+                            <label for="message-content">Enter Your Message</label>
+                            <textarea id="message-content" rowspan="10" type="text" required></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <label for="add">&nbsp;</label>
+                            <button id="add" class="create-message">Send Message</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="delete-post" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    <form id="remove-post">
+                        <h4>Delete Post?</h4><br>
+                        <h6>You are about permanently remove this post. This cannot be undone. Please enter DELETE in the field below to proceed.</h6><br>
+                        <fieldset>
+                            <label for="confirm-delete">Enter DELETE to confirm</label>
+                            <input id="confirm-delete" type="text" maxlength="6">
+                        </fieldset>
+                        <fieldset>
+
+                            <button id="delete" class="modal-btn" disabled  >Delete</button>
+                            <button id="cancel" class="modal-btn btn-ghost">Cancel</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-messages" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    <div id="show-messages">
+                                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="require-auth" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <a class="close">&times;</a>
+                    <form id="prompt-auth">
+                        <h4>Can't Touch This</h4><br>
+                        <h6>You must sign up or log in to complete this action.</h6><br>
+                        <fieldset>
+                            <button id="send-to-register" class="action" data-modal="#register-user">Sign Up</button>
+                            <button id="send-to-login" class="action" data-modal="#login-user">Log In</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
-
 </html>
