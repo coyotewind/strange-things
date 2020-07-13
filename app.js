@@ -329,6 +329,7 @@ function logout() {
     session = undefined; 
     loggedIn = false;
     state.whois = '';
+    bootstrap();
     console.log('remove session')
 }
 
