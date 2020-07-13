@@ -254,8 +254,9 @@ function renderPosts(post) {
 function renderMessages(post) {
     const { messages } = post;
     const messageEl = $(`
-    <div class="messages">   
-        ${ messages
+    <div class="messages">
+        <h4>Read Messages</h4><br>  
+        ${ messages.length > 0
             ? messages.map(function(message) {
             return `
                 <div class="message">
@@ -264,7 +265,7 @@ function renderMessages(post) {
                 </div>
             `
             }).join('<div class="divider"></div>')
-            : ''
+            : 'There are no messages yet. Please check again later.'
         }
     </div>
     `)
