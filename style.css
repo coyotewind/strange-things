@@ -13,7 +13,7 @@
 html { font-size: 62.5%; }
 body { background-color: rgba(230,230,230,0.96); font-size: 1.4rem; font-family: 'Open Sans', sans-serif; overflow: hidden; }
 a { color: #1a1a1a; text-decoration: none; }
-a:hover { color: #1955a5; text-decoration: none; }
+a:hover { color: #1164A3; text-decoration: none; }
 
 .fluid-width { max-width: none; } 
 .full-width { width: 100%; }
@@ -352,7 +352,7 @@ footer {
 }
 
 .controls button:hover {
-    color:#005B75; 
+    color:#1164A3; 
 }
 
 .controls i, .buttons i { 
