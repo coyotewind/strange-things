@@ -255,7 +255,7 @@ function renderMessages(post) {
     const { messages } = post;
     const messageEl = $(`
     <div class="messages">
-        <h4>Read Messages</h4><br>  
+        <h4>Your Messages</h4><br>  
         ${ messages.length > 0
             ? messages.map(function(message) {
             return `
