@@ -329,7 +329,6 @@ function logout() {
     session = undefined; 
     loggedIn = false;
     state.whois = '';
-    window.location.replace('https://strange-things.netlify.app/');
     bootstrap();
     console.log('remove session')
 }
@@ -489,6 +488,7 @@ $('#feed').on('click', '.action:not(.view-messages)', function() {
     dataFromPost = target.data('post')
     postID = dataFromPost._id
     $(modal).show();
+    // history.replaceState({}, document.title, ".");
     console.log('open =', modal)
 });
 
@@ -505,6 +505,7 @@ $('#nav').on('click', '.action', function() {
 
 $('#sidebar').on('click', '.action', function() {
     const modal = $(this).data('modal');
+    console.log(this);
     $(modal).show();
     console.log('open =', modal)
 });
