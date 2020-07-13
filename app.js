@@ -318,6 +318,8 @@ function makeHeaders() {
 
 function login() {
     localStorage.setItem('session', JSON.stringify(session));
+    $('#user-name').append(state.whois);
+    $('.accord-body:first-child').slideDown(400);
     bootstrap()
     console.log('store session')
 }
@@ -327,8 +329,9 @@ function login() {
 function logout() {
     localStorage.removeItem('session');
     session = undefined; 
-    loggedIn = false;
     state.whois = '';
+    loggedIn = false;
+    $('#user-name').empty();
     bootstrap();
     console.log('remove session')
 }
@@ -348,7 +351,6 @@ function updateUI() {
     if(loggedIn) {
         $('.auth').removeClass('hide');
         $('.free').addClass('hide');
-        $('#user-name').append(state.whois);
     } else { 
         $('.auth').addClass('hide');
         $('.free').removeClass('hide');
