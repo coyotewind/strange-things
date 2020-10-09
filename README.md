@@ -11,6 +11,8 @@
 - How to work with get, post, put, patch and delete functions.
 - How to work with JWT Webtokens to authenticate user login/logout.
 - How use multiple modals for various functions.
+- How to work from a suggested development path / road map.
+- How to complete a project from a list of user stories.
 
 ### What I am Proud Of:
 
