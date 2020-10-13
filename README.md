@@ -3,7 +3,7 @@
 ### Description
 
 - Create a "CraigsList-like" App using the Stranger's Things API
-- It can be seen at https://https://strange-things.netlify.app/
+- It can be seen at https://strange-things.netlify.app/
 
 ### What I Learned:
 
